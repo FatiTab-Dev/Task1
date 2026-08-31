@@ -1,6 +1,8 @@
 import { Button } from "./components/ui/Button";
 import { Card } from "./components/common/Card";
 import { Table } from "./components/common/Table";
+import { Posts } from "./components/Posts";
+
 function App() {
   const tableColumns = ["Name", "Age", "city"];
   const tableData = [
@@ -9,12 +11,13 @@ function App() {
     { name: "Jane Smith", age: 25, city: "Los Angeles" },
     { name: "Sam Johnson", age: 35, city: "Chicago" },
   ];
+
   return (
     <div className="p-8 space-y-8 container">
       <h1 className="text-3xl text-dark my-5 font-bold">
-        {" "}
         Assignment 2: Reusable Components
       </h1>
+
       <section className="space-y-4">
         <h2 className="text-xl text-primary my-3 font-semibold">
           Buttons Example
@@ -33,6 +36,7 @@ function App() {
           />
         </div>
       </section>
+
       <section className="space-y-4">
         <h2 className="text-xl text-dark font-semibold my-5">Cards Example</h2>
         <div className="row g-3">
@@ -57,9 +61,22 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="space-y-4 space-x-5">
+
+      <section className="space-y-4">
         <h2 className="text-xl text-dark font-semibold my-5">Table Example</h2>
         <Table columns={tableColumns} data={tableData} striped={true} />
+      </section>
+
+      {/* Task 3 Section */}
+      <section className="mt-5 pt-4 border-t">
+        <header className="mb-4">
+          <h2 className="h3 font-bold text-dark m-0">
+            Task 3: React Query Posts
+          </h2>
+        </header>
+        <main>
+          <Posts />
+        </main>
       </section>
     </div>
   );
